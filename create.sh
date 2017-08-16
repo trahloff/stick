@@ -157,6 +157,14 @@ sudo apt-get -y install docker-ce
 # set favourites in gnome3
 dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'chromium-browser.desktop', 'franz.desktop', 'gnome-terminal.desktop', 'atom.desktop', 'postman.desktop']"
 
+# install fish
+sudo apt-get -y install fish
+chsh -s $(which fish)
+
+# gimme dem reverse incremental searches, baby!
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # install node
 git clone https://github.com/creationix/nvm.git ~/.nvm
 export NVM_DIR="$HOME/.nvm"

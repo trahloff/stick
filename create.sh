@@ -42,42 +42,6 @@ sudo update-alternatives --set x-cursor-theme /usr/share/icons/Numix/cursor.them
 
 # @TODO: install VS Code
 
-# install Franz
-wget https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz -O Franz.tgz
-sudo mkdir /opt/franz
-sudo chmod 777 /opt/franz
-sudo tar -xvzf Franz.tgz -C /opt/franz
-
-sudo cat <<EOF > /usr/share/applications/Franz.desktop
-[Desktop Entry]
-Name=Franz
-Comment=Franz Messenger
-GenericName=Franz Client for Linux
-Exec=/opt/franz/Franz %U
-Icon=/opt/franz/resources/app.asar.unpacked/assets/franz.svg
-Type=Application
-StartupNotify=true
-Categories=GNOME;GTK;Network;InstantMessaging;
-MimeType=text/plain;
-EOF
-
-# add to autostart
-cat <<EOF > ~/.config/autostart/Franz.desktop
-[Desktop Entry]
-Type=Application
-Vestion=1.0
-Name=Franz
-Comment=Franz startup script
-Exec=/home/octavian/franz/Franz
-StartupNotify=false
-Terminal=false
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
-Name[de_DE]=Franz
-Comment[de_DE]=Start Franz messenger
-EOF
-
 # install Postman
 wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
 
